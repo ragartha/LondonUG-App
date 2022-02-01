@@ -1,14 +1,14 @@
 # LondonUG-App
 Application that generates the shortest path between two stations in the London Underground network. This app is a simple python implementation using basic libraries only. This project was my submission for the System Design and Programming module as part of my course: MSc AI and Data Analytics at Keele University.
 
-#Summary
+# Summary
 The LU app designed here is for users who wish to find the shortest path between two stations in the 
 London Underground network. This app lets users remove stations out of service and close lines. Line 
 and station closure are considered for generating results. The source code for the app is in 
 “LU_App.py”. All references are directly cited as comments in the code.
 
 
-Requirements analysis
+# Requirements analysis
 The application we are creating is intended for users who wish to travel between stations and need to 
 know the fastest route. The functional requirements are:
 - Design a simple GUI.
