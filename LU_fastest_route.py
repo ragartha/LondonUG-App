@@ -27,7 +27,7 @@ with open('londonstations.csv') as stations:
     headerst = next(reader)
     london_stations_namesid = {int(rows[0]):rows[3] for rows in reader}
 
-#---------Creating the Graphical User Interface, adapted from: Shipman J.,"Tkinter 8.5 reference: a GUI for Python" and practical 4
+#---------Creating the Graphical User Interface. reference: Shipman J.,"Tkinter 8.5 reference: a GUI for Python" and practical 4
 #  Creating the main window
 def main_window(root: Tk): 
     #create frame to place widgets
@@ -53,6 +53,7 @@ def fastest_route():
     global total_time
 
     stvalues = list(sorted(london_stations_namesid.values())) #sort the list alphabetically since the search option is disabled in the combobox
+    
 #remove the closed stations from the combobox, since closing a station doesn't affect the lines, this won't affect the network data    
     if closedstation_list:
         for st in closedstation_list:
@@ -208,7 +209,7 @@ def change_status():
         station = changeStationStatus(closedlines, openlines)
         closedline_list.remove(station)   
 
-#---Function to change the status of selected item # adapted from 
+#---Function to change the status of selected item
 def changeStationStatus(original_box, Next_box):
     index = original_box.curselection()[0]
     selected_item = original_box.get(index)
@@ -308,7 +309,7 @@ class graph:
     def set_previous(self, current):  #set state to previous
         self.previous = current
 
-#-- The next two functions to calculate the shortest path are inspired from: K Hong, DIJKSTRA'S SHORTEST PATH ALGORITHM available on: https://www.bogotobogo.com/python/python_Dijkstras_Shortest_Path_Algorithm.php
+#-- The next two functions to calculate the shortest path are adapted from: K Hong, DIJKSTRA'S SHORTEST PATH ALGORITHM available on: https://www.bogotobogo.com/python/python_Dijkstras_Shortest_Path_Algorithm.php
 
 #---Function to return the shortest path using the destination, allows to gather predecessors starting from the target node
 def shortest_path_function(v, path):
